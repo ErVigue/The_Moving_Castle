@@ -1,9 +1,9 @@
-general:
-  verbose: true
+ 
 steps:
   mtaBuild:
     buildTarget: 'CF'
     applicationName: 'Kakashi'
+    verbose: true
   cloudFoundryDeploy:
     cloudFoundry:
       credentialsId: 'CF'
