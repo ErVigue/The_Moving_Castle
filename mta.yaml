@@ -1,9 +1,60 @@
 _schema-version: 2.1.0
 ID: com.sap.piper.node.hello.world
-version: 1.0.0
 description: A Hello World sample application
+version: 1.0.0
 provider: SAP Sample generator
 modules:
-  - name: Kakashi_CAP_demo
-    type: nodejs
-    path: .
+- name: Kakashi_CAP_demo
+  type: nodejs
+  path: .
+- name: com.sap.piper.node.hello.world-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: com.sap.piper.node.hello.world-repo-host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - nsrisks.zip
+      name: nsrisks
+      target-path: resources/
+- name: nsrisks
+  type: html5
+  path: app/risks
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: com.sap.piper.node.hello.world-repo-host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: com.sap.piper.node.hello.world-html5-srv
+    service-plan: app-host
+- name: com.sap.piper.node.hello.world-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: false
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
+      version: 1.0.0
+    service: destination
+    service-name: com.sap.piper.node.hello.world-destination-service
+    service-plan: lite
+parameters:
+  deploy_mode: html5-repo
