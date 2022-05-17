@@ -2,7 +2,6 @@
 steps:
   mtaBuild:
     buildTarget: 'CF'
-    applicationName: 'Kakashi'
     verbose: true
   cloudFoundryDeploy:
     cloudFoundry:
