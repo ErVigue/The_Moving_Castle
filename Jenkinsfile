@@ -8,7 +8,7 @@ node(){
   }
 
   stage('Build')   {
-      mtaBuild script:this, applicationName: "Kakashi"
+      mtaBuild script:this, applicationName: 'Kakashi'
   }
 
 }
