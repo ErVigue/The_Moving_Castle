@@ -1,11 +1,2 @@
- 
-steps:
-  mtaBuild:
-    buildTarget: 'CF'
-    verbose: true
-  cloudFoundryDeploy:
-    cloudFoundry:
-      credentialsId: 'CF'
-      apiEndpoint: '<CF Endpoint>'
-      org: '<CF Organization>'
-      space: '<CF Space>'
+general:
+  buildTool: 'npm'
