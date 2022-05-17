@@ -7,7 +7,6 @@ node(){
       setupCommonPipelineEnvironment script:this
   }
   stage('Build')   {
-      mtaBuild script:this,
-      applicationName
+      mtaBuild script:this
   }
 }
