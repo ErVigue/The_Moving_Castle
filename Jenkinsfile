@@ -1,13 +1,3 @@
-@Library('piper-lib-os') _
+@Library('piper-lib') _
 
-node(){
-  stage('Prepare')   {
-      deleteDir()
-      checkout scm
-      setupCommonPipelineEnvironment script:this
-  }
-  stage('Build')   {
-      mtaBuild script:this
-  }
-
-}
+piperPipeline script: this
