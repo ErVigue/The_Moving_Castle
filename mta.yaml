@@ -4,6 +4,6 @@ version: 1.0.0
 description: A Hello World sample application
 provider: SAP Sample generator
 modules:
-  - name: piper.node.hello.world
+  - name: Kakashi_CAP_demo
     type: nodejs
     path: .
