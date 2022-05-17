@@ -10,7 +10,8 @@
     "private": true,
     "dependencies": {
         "@sap/cds": "^5",
-        "express": "^4"
+        "express": "^4",
+        "karma-webdriver-launcher": "^1.0.8"
     },
     "devDependencies": {
         "@sap/ux-specification": "^1.100.2",
