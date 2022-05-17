@@ -6,10 +6,8 @@ node(){
       checkout scm
       setupCommonPipelineEnvironment script:this
   }
-
   stage('Build')   {
       mtaBuild script:this,
       applicationName
   }
-
 }
