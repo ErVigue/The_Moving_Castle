@@ -1,8 +1,11 @@
 {
-  "name": "Kakashi",
+  "name": "kakashi",
   "version": "1.0.0",
   "description": "A simple CAP project.",
-  "repository": "<Add your repository here>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ErVigue/The_Moving_Castle/tree/Kakashi-no-Kabu"
+  },
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
@@ -39,5 +42,7 @@
       "no-console": "off",
       "require-atomic-updates": "off"
     }
-  }
+  },
+  "main": "index.js",
+  "author": "Ernesto"
 }
