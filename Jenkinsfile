@@ -9,4 +9,7 @@ node(){
   stage('Build')   {
       mtaBuild script:this
   }
+  stage('Unit Test')   {
+      npmExecuteScripts script:this
+  }  
 }
