@@ -11,7 +11,4 @@ node(){
       mtaBuild script:this
   }
 
-  stage('Deploy')   {
-      cloudFoundryDeploy script:this, deployTool:'mtaDeployPlugin'
-  }
 }
