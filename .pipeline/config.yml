@@ -1,0 +1,10 @@
+steps:
+  mtaBuild:
+    buildTarget: 'CF'
+    applicationName: 'Kakashi'
+  cloudFoundryDeploy:
+    cloudFoundry:
+      credentialsId: 'CF'
+      apiEndpoint: '<CF Endpoint>'
+      org: '<CF Organization>'
+      space: '<CF Space>'
