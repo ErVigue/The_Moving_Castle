@@ -10,6 +10,6 @@ node(){
       mtaBuild script:this
   }
   stage('Unit Test')   {
-      npmExecuteScripts script:this
+      karmaExecuteTests script: this
   }  
 }
