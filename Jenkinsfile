@@ -9,7 +9,5 @@ node(){
   stage('Build')   {
       mtaBuild script:this
   }
-  stage('Unit Test')   {
-      karmaExecuteTests script: this
-  }  
+
 }
