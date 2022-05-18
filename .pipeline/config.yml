@@ -6,6 +6,4 @@ general:
 steps:
   mtaBuild:
     buildTarget: 'CF'
-  npmExecuteScripts:
-    runScripts: 'test'
-  
+
