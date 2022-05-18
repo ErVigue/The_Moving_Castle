@@ -2,8 +2,10 @@ general:
   buildTool: 'npm'
   gitSshKeyCredentialsId: 'credentials-id-in-jenkins'
   verbose: true
-
+  
 steps:
   mtaBuild:
     buildTarget: 'CF'
+  npmExecuteScripts:
+    verbose: true
 
