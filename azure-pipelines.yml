@@ -25,14 +25,11 @@ stages:
   displayName: Build MTA for SAP Cloud Platform
   jobs:
     - job: build
-      pool:
-        vmImage: 'ubuntu-latest'
       container: mta
       steps:
-        - bash: 'mtaBuild --build-target CF --mtar MySampleApp.mtar build'
+        - bash: 'mbt --platform cf --mtar MySampleApp.mtar -t . build'
         - publish: $(System.DefaultWorkingDirectory)/.
-          artifact: WebApp
-          
+          artifact: WebApp          
 
 - stage: test
   displayName: Run Karma Test Suite
