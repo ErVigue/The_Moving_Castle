@@ -10,10 +10,12 @@ resources:
   - container: node
     image: 'geekykaran/headless-chrome-node-docker:latest'
     options: --privileged
+
 trigger:
   branches:
     include:
-    - master
+    - Kakashi-no-Kabu
+
 stages:
 - stage: build
   displayName: Build MTA for SAP Cloud Platform
@@ -42,6 +44,7 @@ stages:
       inputs:
         path: $(System.DefaultWorkingDirectory)/.
         artifactName: TestResult
+
 - stage: deploy
   displayName: Deployment to SAP Cloud Platform (cf)
   jobs:
